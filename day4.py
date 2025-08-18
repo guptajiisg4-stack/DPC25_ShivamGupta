@@ -8,17 +8,14 @@ def merge(arr1, arr2, m, n):
         j = gap
 
         while j < (m + n):
-            # i in arr1, j in arr1
             if i < m and j < m:
                 if arr1[i] > arr1[j]:
                     arr1[i], arr1[j] = arr1[j], arr1[i]
 
-            # i in arr1, j in arr2
             elif i < m and j >= m:
                 if arr1[i] > arr2[j - m]:
                     arr1[i], arr2[j - m] = arr2[j - m], arr1[i]
 
-            # i in arr2, j in arr2
             else:
                 if arr2[i - m] > arr2[j - m]:
                     arr2[i - m], arr2[j - m] = arr2[j - m], arr2[i - m]
@@ -31,7 +28,5 @@ def merge(arr1, arr2, m, n):
         else:
             gap = math.ceil(gap / 2)
 
-
-# Example Usage
 arr1 = [1, 3, 5, 7]
 arr2 = [2, 4, 6, 8
